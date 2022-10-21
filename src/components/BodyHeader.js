@@ -26,7 +26,7 @@ const BodyHeader = (props) => {
       const p = document.querySelectorAll(".rating-points p");
       p.forEach((el) => el.classList.remove("active"));
       e.target.classList.add("active");
-      setReviewPoint(e.target.innerText);
+      setReviewPoint(Number(e.target.innerText));
     }
   }
 
