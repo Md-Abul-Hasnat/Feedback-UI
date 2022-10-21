@@ -86,6 +86,7 @@
   font-size: 1rem;
   width: 80%;
   outline: none;
+  background-color: transparent;
 }
 .review-text-area input[type="text"]::placeholder {
   font-size: 0.9rem;
