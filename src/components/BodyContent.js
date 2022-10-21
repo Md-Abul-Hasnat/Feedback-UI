@@ -15,7 +15,7 @@ const BodyContent = (props) => {
           <p>{data.length} Reviews </p>
           <p>Average rating : {isFinite(average) ? average : 0} </p>
         </div>
-        <div className="review-card">
+        <motion className="review-card">
           {data.map((review) => (
             <ReviewCard
               onRemoveReview={props.onRemove}
@@ -23,7 +23,7 @@ const BodyContent = (props) => {
               key={review.id}
             />
           ))}
-        </div>
+        </motion>
       </div>
     </section>
   );

@@ -212,6 +212,10 @@
   .body-content-wrapper {
     width: 85%;
   }
+  .head p {
+    top: -2px;
+    left: 97%;
+  }
 }
 @media screen and (max-width: 410px) {
   .body-header-wrapper .rating-points {
