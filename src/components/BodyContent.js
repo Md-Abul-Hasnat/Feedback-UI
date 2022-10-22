@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import { GlobalContext } from "./Context";
 import ReviewCard from "./ReviewCard";
 
 const BodyContent = (props) => {
-  const data = props.reviewData;
+  const contextData = useContext(GlobalContext);
+  const data = contextData.data;
+
   const averageRating = data.map((review) => review.rating);
   const average = (
     averageRating.reduce((sum, cur) => sum + cur, 0) / averageRating.length
@@ -17,11 +20,7 @@ const BodyContent = (props) => {
         </div>
         <div className="review-card">
           {data.map((review) => (
-            <ReviewCard
-              onRemoveReview={props.onRemove}
-              data={review}
-              key={review.id}
-            />
+            <ReviewCard data={review} key={review.id} />
           ))}
         </div>
       </div>

@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { GlobalContext } from "./Context";
 
-const BodyHeader = (props) => {
+const BodyHeader = () => {
+  const contextData = useContext(GlobalContext);
+
   const [reviewText, setReviewText] = useState("");
   const [reviewPoint, setReviewPoint] = useState(10);
 
@@ -12,7 +15,7 @@ const BodyHeader = (props) => {
         text: reviewText,
         rating: reviewPoint,
       };
-      props.onReviewSubmit(newReview);
+      contextData.newReview(newReview);
       setReviewText("");
     }
   }

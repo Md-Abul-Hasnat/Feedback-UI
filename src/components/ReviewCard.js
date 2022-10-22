@@ -1,14 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import { GlobalContext } from "./Context";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 
 const ReviewCard = (props) => {
+  const contextData = useContext(GlobalContext);
   const { id, text, rating } = props.data;
-
-  function handleRemove(id) {
-    props.onRemoveReview(id);
-  }
 
   return (
     <motion.div
@@ -19,7 +17,7 @@ const ReviewCard = (props) => {
       <article>
         <div className="head">
           <h2>{rating}</h2>
-          <p onClick={() => handleRemove(id)}>
+          <p onClick={() => contextData.removeReview(id)}>
             <FontAwesomeIcon icon={faXmark} />
           </p>
         </div>
